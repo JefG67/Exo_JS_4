@@ -26,13 +26,15 @@ let boxClick = document.querySelectorAll(".box")
 boxClick.forEach(function(box){
     box.addEventListener("click",function(){
     box.classList.toggle("click")
-    })
-}
+
+    if (box.classList.contains("clicked")){
+        box.style.transform = "scale(1), rotate(360deg)"
+        
+    }
+        
+
+    }
+    
 )
-let boxUnClick = document.querySelectorAll(".box")
-boxUnClick.forEach(function(box){
-    box.addEventListener("unClick",function(){
-    box.classList.toggle("unClick")
-    })
 }
 )

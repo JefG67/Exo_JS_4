@@ -38,7 +38,3 @@
     transition: 1s;
 }
 
-.box.unClick i{
-  transform: scale(1) rotate(-360deg);
-  transition: 1s;
-} 
