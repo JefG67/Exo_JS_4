@@ -9,6 +9,7 @@ box.classList.add("box")
 
 const icones = ["fa-facebook", "fa-twitter", "fa-instagram"]; //creation d'un tableau ou je stock mes icones
 const couleurs = ["#3b5998", "#1D9BF0", "#E1306C"]; //creation d'un tableau ou je stock mes couleurs
+const noms = ["Facebook", "Twitter", "Instagram"]
 
 
 for (let i = 0; i <= 2; i++) {
@@ -20,8 +21,9 @@ for (let i = 0; i <= 2; i++) {
     newBox.appendChild(newIcone)
     board.appendChild(newBox)
 }
+console.log(noms)
 
-
+// ajouter un event sur chaque click d'une box
 let boxClick = document.querySelectorAll(".box")
 boxClick.forEach(function (box) {
     box.addEventListener("click", function () {
@@ -29,17 +31,27 @@ boxClick.forEach(function (box) {
         
         const color = box.style.backgroundColor; // creation d'une variable pour stocker la couleur de la boite cliqué
         board.style.backgroundColor = color; //j'applique ma couleur stocker dans ma variable sur mon element board
-        // const noms = ["Facebook", "Twitter", "Instagram"];
-        // box.textContent = noms[i];
         
+        //insertion du text
+        
+        // const text = document.createElement("span")
+        // text.textContent = noms[i];
+        // text.style.fontsize = "12px"
+        // box.appendChild(text);
+        // console.log(noms)
+
+        //creation de la variable qui selectionne mon tableau icone
         const icon = box.querySelector("i");
         if (box.classList.contains("click")){
-            icon.style.transform = "rotate(360deg)";   //petit soucis un tour de trop 
+            icon.style.transform = "rotate(360deg)"  
         } else {
-            icon.style.transform = "rotate(-360deg)";
-            icon.style.transition = "2s";
+            icon.style.transform = "rotate(0deg)"
+            icon.style.transition = "2s"
         }
 
     })
 }
 )
+
+
+
